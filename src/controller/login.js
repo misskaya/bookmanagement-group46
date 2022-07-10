@@ -1,6 +1,10 @@
 const userModel =require("../model/userModel")
 const jwt = require("jsonwebtoken")
 
+
+
+
+//--------------------------------------------POST/REGISTER-----------------------------------------------------------
 const userLogin = async function(req,res){
     let email=req.body.email;
     let password=req.body.password
@@ -15,7 +19,7 @@ const userLogin = async function(req,res){
             iat: Math.floor(Date.now()/1000),
             ext: Math.floor(Date.now()/1000)+10*60*60 
         },
-        "project_3_Group-64"               
+        "project_3_Group-46"               
     )
         res.setHeader("x-api-key",token)
         return res.status(201).send({status:true,msg:"sucessfully login",data:token})

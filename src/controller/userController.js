@@ -5,6 +5,9 @@ const userModel = require("../model/userModel");
 const {isValid,isValidName,isValidEmail,isValidMobile,isValidPassword,isValidRequestBody} =require("../validation/validation")
 
 
+
+//-------------------------------POST/REGISTER--------------------------------------------------
+
 const createUser = async function (req, res) {
     try {
         let userBody = req.body;
@@ -51,7 +54,7 @@ const createUser = async function (req, res) {
          if (!isValidPassword(password)) {
             return res.status(400).send({ status: false, msg: "Please use first letter in uppercase, lowercase and number with min. 8 lengthand maxi 15 length" })
         }
-
+        
         
 
         //check if email is already in use
